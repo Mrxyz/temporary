@@ -53,10 +53,6 @@ def replaceCharEntity(htmlstr):
     return htmlstr
 
 
-# def repalce(s, re_exp, repl_string):
-#     return re_exp.sub(repl_string, s)
-
-
 if __name__ == '__main__':
     s = open('test.html', 'r', encoding='UTF-8').read()
     news = filter_tags(s)
