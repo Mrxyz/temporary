@@ -13,9 +13,9 @@ def reTest(regularExp, test_str):
 
 
 def is_valid_email(str):
-    re_email = re.compile(r'^([\w|.]+)@(\w+.com)$')
+    re_email = re.compile(r'^([\w\.]+)@(\w+.com)$')
     if re_email.match(str):
-        print('ok', re_email.match(str).groups())
+        print('ok', re_email.match(str).groups())  # group(2)为域名
     else:
         print('failed')
 
