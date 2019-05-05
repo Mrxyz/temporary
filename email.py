@@ -21,8 +21,8 @@ def is_valid_email(str):
 
 
 if __name__ == '__main__':
-    reTest(exp_str1, 'bill.gates@microsoft.com')
-    reTest(exp_str2, 'bill.gates@microsoft.com')
-    is_valid_email('bill.gates@microsoft.com')
+    reTest(exp_str1, 'xiadingjaing@fagougou.com')
+    reTest(exp_str2, 'xiadingjaing@fagougou.com')
+    is_valid_email('xiadingjaing@fagougou.com')
 
 
