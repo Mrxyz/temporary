@@ -1,28 +1,17 @@
 import re
 
 
-exp_str1 = r'^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){0,4}@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){0,4}$'
-exp_str2 = r'^[a-zA-Z0-9_][^@]+@[^\.]+.*?[^@\.]$'
-
-
-def reTest(regularExp, test_str):
-    if re.match(regularExp, test_str):
-        print('ok')
-    else:
-        print("failed")
-
-
-def is_valid_email(str):
-    re_email = re.compile(r'^([\w\.]+)@(\w+.com)$')
-    if re_email.match(str):
-        print('ok', re_email.match(str).groups())  # group(2)为域名
+def is_valid_email(address):
+    re_email = re.compile(r'^[\w-]+[\.[\w-]+]*@([\w-]+\.[\w-]+)$')
+    obj = re_email.match(address)
+    if obj:
+        print("账号：%s\n域名：%s" % (obj.group(0), obj.group(1)))  # group(1)为域名
     else:
         print('failed')
 
 
+test_str = '1661426042@qq.com'
 if __name__ == '__main__':
-    reTest(exp_str1, 'xiadingjaing@fagougou.com')
-    reTest(exp_str2, 'xiadingjaing@fagougou.com')
-    is_valid_email('xiadingjaing@fagougou.com')
+    is_valid_email(test_str)
 
 
